@@ -9,7 +9,7 @@ type PropsPresent = {
 export default function ListPresent ({props}: PropsPresent): JSX.Element{
     return(
         <Fragment>
-            {props.map(item => <OnePresent propsItem={item}/>)}
+            {props.map(item => <OnePresent key={item.title} propsItem={item}/>)}
         </Fragment>
     );
 }
