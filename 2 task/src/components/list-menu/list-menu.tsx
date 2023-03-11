@@ -8,7 +8,7 @@ type PropsItems = {
 export default function ListItems ({props}: PropsItems): JSX.Element{
     return(
         <ul>
-            {props.map(item => <OneItem propsItem={item}/>)}
+            {props.map(item => <OneItem key={item.title} propsItem={item}/>)}
         </ul>
     );
 }
