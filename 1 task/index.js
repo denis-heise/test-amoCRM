@@ -41,11 +41,14 @@ inputEl.addEventListener('input', function () {
 
 buttonEl.addEventListener('click', () => {
   const inputValue = inputEl.value;
-  const seconds = getSecondsTimer(inputValue);
-  clearInterval(timeId);
-  animateTimer(seconds);
-  timerEl.textContent = inputEl.value;
-  inputEl.value = '';
+  
+  if (inputValue.length !== 0){
+    const seconds = getSecondsTimer(inputValue);
+    clearInterval(timeId);
+    animateTimer(seconds);
+    timerEl.textContent = inputEl.value;
+    inputEl.value = '';
+  }
 });
 
 function timerInputMask(element) {
